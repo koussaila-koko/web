@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+
+<title>Jeu de bataille navale</title>
+<meta name="description" content="Un jeu de bataille navale programmé en JavaScript."/>
+<style>
+	.caseBataille{
+		width:20px;
+		height:20px;
+		text-align:center;
+	}
+	html {
+    background-color: silver;
+    background-image: url('../assets/background-main.jpg');
+    background-size: 100% auto;
+}
+</style>
+</head>
+ 
+<body>
+	<section id="dashboard">
+<table id="plateau" border="1">Table joueur 1
+<tr>
+<td></td>
+<td class="caseBataille">A</td>
+<td class="caseBataille">B</td> 
+<td class="caseBataille">C</td>
+<td class="caseBataille">D</td>
+<td class="caseBataille">E</td>
+<td class="caseBataille">F</td>
+<td class="caseBataille">G</td>
+<td class="caseBataille">H</td>
+<td class="caseBataille">I</td>
+<td class="caseBataille">J</td>
+</tr>
+<tr>
+<td class="caseBataille">1</td>
+<td class="caseBataille" id="A1" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="B1" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="C1" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="D1" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="E1" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="F1" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="G1" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="H1" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="I1" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="J1" onclick="jouerCoup(this.id);"></td>
+</tr>
+</section>
+<tr>
+<td class="caseBataille">2</td>
+<td class="caseBataille" id="A2" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="B2" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="C2" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="D2" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="E2" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="F2" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="G2" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="H2" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="I2" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="J2" onclick="jouerCoup(this.id);"></td>
+</tr>
+<tr>
+<td class="caseBataille">3</td>
+<td class="caseBataille" id="A3" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="B3" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="C3" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="D3" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="E3" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="F3" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="G3" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="H3" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="I3" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="J3" onclick="jouerCoup(this.id);"></td>
+</tr>
+<tr>
+<td class="caseBataille">4</td>
+<td class="caseBataille" id="A4" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="B4" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="C4" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="D4" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="E4" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="F4" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="G4" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="H4" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="I4" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="J4" onclick="jouerCoup(this.id);"></td>
+</tr>
+<tr>
+<td class="caseBataille">5</td>
+<td class="caseBataille" id="A5" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="B5" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="C5" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="D5" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="E5" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="F5" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="G5" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="H5" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="I5" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="J5" onclick="jouerCoup(this.id);"></td>
+</tr>
+<tr>
+<td class="caseBataille">6</td>
+<td class="caseBataille" id="A6" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="B6" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="C6" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="D6" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="E6" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="F6" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="G6" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="H6" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="I6" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="J6" onclick="jouerCoup(this.id);"></td>
+</tr>
+<tr>
+<td class="caseBataille">7</td>
+<td class="caseBataille" id="A7" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="B7" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="C7" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="D7" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="E7" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="F7" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="G7" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="H7" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="I7" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="J7" onclick="jouerCoup(this.id);"></td>
+</tr>
+<tr>
+<td class="caseBataille">8</td>
+<td class="caseBataille" id="A8" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="B8" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="C8" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="D8" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="E8" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="F8" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="G8" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="H8" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="I8" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="J8" onclick="jouerCoup(this.id);"></td>
+</tr>
+<tr>
+<td class="caseBataille">9</td>
+<td class="caseBataille" id="A9" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="B9" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="C9" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="D9" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="E9" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="F9" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="G9" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="H9" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="I9" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="J9" onclick="jouerCoup(this.id);"></td>
+</tr>
+<tr>
+<td class="caseBataille">10</td>
+<td class="caseBataille" id="A10" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="B10" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="C10" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="D10" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="E10" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="F10" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="G10" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="H10" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="I10" onclick="jouerCoup(this.id);"></td>
+<td class="caseBataille" id="J10" onclick="jouerCoup(this.id);"></td>
+</tr>
+</table>
+<br/>
+
+  <table id="plateau 2" border="1">Table joueur 2
+<tr>
+<td></td>
+<td class="caseBataille">A</td>
+<td class="caseBataille">B</td> 
+<td class="caseBataille">C</td>
+<td class="caseBataille">D</td>
+<td class="caseBataille">E</td>
+<td class="caseBataille">F</td>
+<td class="caseBataille">G</td>
+<td class="caseBataille">H</td>
+<td class="caseBataille">I</td>
+<td class="caseBataille">J</td>
+</tr>
+<tr>
+<td class="caseBataille">1</td>
+<td class="caseBataille" id="J2A1"></td>
+<td class="caseBataille" id="J2B1"></td>
+<td class="caseBataille" id="J2C1"></td>
+<td class="caseBataille" id="J2D1"></td>
+<td class="caseBataille" id="J2E1"></td>
+<td class="caseBataille" id="J2F1"></td>
+<td class="caseBataille" id="J2G1"></td>
+<td class="caseBataille" id="J2H1"></td>
+<td class="caseBataille" id="J2I1"></td>
+<td class="caseBataille" id="J2J1"></td>
+</tr>
+<tr>
+<td class="caseBataille">2</td>
+<td class="caseBataille" id="J2A2"></td>
+<td class="caseBataille" id="J2B2"></td>
+<td class="caseBataille" id="J2C2"></td>
+<td class="caseBataille" id="J2D2"></td>
+<td class="caseBataille" id="J2E2"></td>
+<td class="caseBataille" id="J2F2"></td>
+<td class="caseBataille" id="J2G2"></td>
+<td class="caseBataille" id="J2H2"></td>
+<td class="caseBataille" id="J2I2"></td>
+<td class="caseBataille" id="J2J2"></td>
+</tr>
+<tr>
+<td class="caseBataille">3</td>
+<td class="caseBataille" id="J2A3"></td>
+<td class="caseBataille" id="J2B3"></td>
+<td class="caseBataille" id="J2C3"></td>
+<td class="caseBataille" id="J2D3"></td>
+<td class="caseBataille" id="J2E3"></td>
+<td class="caseBataille" id="J2F3"></td>
+<td class="caseBataille" id="J2G3"></td>
+<td class="caseBataille" id="J2H3"></td>
+<td class="caseBataille" id="J2I3"></td>
+<td class="caseBataille" id="J2J3"></td>
+</tr>
+<tr>
+<td class="caseBataille">4</td>
+<td class="caseBataille" id="J2A4"></td>
+<td class="caseBataille" id="J2B4"></td>
+<td class="caseBataille" id="J2C4"></td>
+<td class="caseBataille" id="J2D4"></td>
+<td class="caseBataille" id="J2E4"></td>
+<td class="caseBataille" id="J2F4"></td>
+<td class="caseBataille" id="J2G4"></td>
+<td class="caseBataille" id="J2H4"></td>
+<td class="caseBataille" id="J2I4"></td>
+<td class="caseBataille" id="J2J4"></td>
+</tr>
+<tr>
+<td class="caseBataille">5</td>
+<td class="caseBataille" id="J2A5"></td>
+<td class="caseBataille" id="J2B5"></td>
+<td class="caseBataille" id="J2C5"></td>
+<td class="caseBataille" id="J2D5"></td>
+<td class="caseBataille" id="J2E5"></td>
+<td class="caseBataille" id="J2F5"></td>
+<td class="caseBataille" id="J2G5"></td>
+<td class="caseBataille" id="J2H5"></td>
+<td class="caseBataille" id="J2I5"></td>
+<td class="caseBataille" id="J2J5"></td>
+</tr>
+<tr>
+<td class="caseBataille">6</td>
+<td class="caseBataille" id="J2A6"></td>
+<td class="caseBataille" id="J2B6"></td>
+<td class="caseBataille" id="J2C6"></td>
+<td class="caseBataille" id="J2D6"></td>
+<td class="caseBataille" id="J2E6"></td>
+<td class="caseBataille" id="J2F6"></td>
+<td class="caseBataille" id="J2G6"></td>
+<td class="caseBataille" id="J2H6"></td>
+<td class="caseBataille" id="J2I6"></td>
+<td class="caseBataille" id="J2J6"></td>
+</tr>
+<tr>
+<td class="caseBataille">7</td>
+<td class="caseBataille" id="J2A7"></td>
+<td class="caseBataille" id="J2B7"></td>
+<td class="caseBataille" id="J2C7"></td>
+<td class="caseBataille" id="J2D7"></td>
+<td class="caseBataille" id="J2E7"></td>
+<td class="caseBataille" id="J2F7"></td>
+<td class="caseBataille" id="J2G7"></td>
+<td class="caseBataille" id="J2H7"></td>
+<td class="caseBataille" id="J2I7"></td>
+<td class="caseBataille" id="J2J7"></td>
+</tr>
+<tr>
+<td class="caseBataille">8</td>
+<td class="caseBataille" id="J2A8"></td>
+<td class="caseBataille" id="J2B8"></td>
+<td class="caseBataille" id="J2C8"></td>
+<td class="caseBataille" id="J2D8"></td>
+<td class="caseBataille" id="J2E8"></td>
+<td class="caseBataille" id="J2F8"></td>
+<td class="caseBataille" id="J2G8"></td>
+<td class="caseBataille" id="J2H8"></td>
+<td class="caseBataille" id="J2I8"></td>
+<td class="caseBataille" id="J2J8"></td>
+</tr>
+<tr>
+<td class="caseBataille">9</td>
+<td class="caseBataille" id="J2A9" ></td>
+<td class="caseBataille" id="J2B9"></td>
+<td class="caseBataille" id="J2C9"></td>
+<td class="caseBataille" id="J2D9"></td>
+<td class="caseBataille" id="J2E9"></td>
+<td class="caseBataille" id="J2F9"></td>
+<td class="caseBataille" id="J2G9"></td>
+<td class="caseBataille" id="J2H9"></td>
+<td class="caseBataille" id="J2I9"></td>
+<td class="caseBataille" id="J2J9"></td>
+</tr>
+<tr>
+<td class="caseBataille">10</td>
+<td class="caseBataille" id="J2A10"></td>
+<td class="caseBataille" id="J2B10"></td>
+<td class="caseBataille" id="J2C10"></td>
+<td class="caseBataille" id="J2D10"></td>
+<td class="caseBataille" id="J2E10"></td>
+<td class="caseBataille" id="J2F10"></td>
+<td class="caseBataille" id="J2G10"></td>
+<td class="caseBataille" id="J2H10"></td>
+<td class="caseBataille" id="J2I10"></td>
+<td class="caseBataille" id="J2J10"></td>
+</tr>
+</table>
+<script src="bataille.js"></script>
+</body>
+</html>
