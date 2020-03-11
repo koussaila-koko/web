@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Page d'accueil</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+<main>
+    <h1>Connexion</h1>
+
+    <section class="login">
+        <p id="confirmation" class="confirmation"></p>
+        <section id="new-user">
+            <h2>Se créer un compte</h2>
+            <form id="new-user-form" class="form">
+
+                 <label>Courriel <input type="email" name="email" id="email" value=""/></label>
+                <label>Mot de passe <input type="password" name="password" id="password" value="" required/></label>
+                <label>Mot de passe <input type="password" name="passwordConf" id="passwordConf" value="" required/></label>
+               
+                <label>age <input type="text" class="age" name="age" id="age" value=""/></label>
+                <a href="#" id="new-user-btn" class="button metal linear">Créer</a>
+            </form>
+        </section>
+        <section id="login-user">
+            <h2>Se connecter</h2>
+            <form id="login-form" class="form">
+               
+                 <label>Courriel <input type="email" name="email" id="email" value=""/></label>
+                <label>Mot de passe <input type="password" name="passwordU" id="passwordU" value="" required/></label>
+                        <a href="menu.html" id="login-btn" class="button metal linear">Se connecter</a>
+            </form>
+
+        </section>
+        
+    </section>
+</main>
+</body>
+</html>
