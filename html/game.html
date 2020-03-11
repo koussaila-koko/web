@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Partie</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body><!-- Contenu de la page d'accueil -->
+<main>
+    <h1>Ennemi en vue !</h1>
+    <section id="screen">
+        <figure class="fleet">
+            <figcaption id="opponentName"></figcaption>
+            <canvas id="opponentMap" class="sea" width="400" height="400">Your browser does not support the canvas element.</canvas>
+        </figure>
+        <figure class="fleet">
+            <figcaption id="playerName"></figcaption>
+            <canvas id="myMap"  class="sea" width="400" height="400">Your browser does not support the canvas element.</canvas>
+        </figure>
+        <ul class="opponentFleet">
+        </ul>
+    </section>
+    <section id="dashboard">
+        <nav>
+            <ul id="console"></ul>
+            <ul>
+                <li class="fire"><a href="#" id="fire-btn" class="metal radial"><span>Fire</span></a></li>
+            </ul>
+        </nav>
+    </section>
+    <nav>
+        <ul class="dashboard">
+            <li><a href="#" id="withdraw-btn" class="button metal linear">Fuir</a></li>
+            <li><a href="#" id="quit-btn" class="button metal linear">Quitter</a></li>
+        </ul>
+
+    </nav>
+</main>
+</body>
+</html>
