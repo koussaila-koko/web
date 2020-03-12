@@ -5,6 +5,7 @@
     <title>Page d'accueil</title>
     <link rel="stylesheet" href="../css/style.css"/>
 </head>
+       <!-- PAGE D'ACCUEIL : si le joueur a un compte il se connecte directement sinon il crée un compte pour pouvoir accéder au site-->
 <body>
 <main>
     <h1>Connexion</h1>
@@ -12,14 +13,14 @@
     <section class="login">
         <p id="confirmation" class="confirmation"></p>
         <section id="new-user">
-            <h2>Se créer un compte</h2>
+            <h2>Créer un compte</h2>
             <form id="new-user-form" class="form">
 
                  <label>Courriel <input type="email" name="email" id="email" value=""/></label>
                 <label>Mot de passe <input type="password" name="password" id="password" value="" required/></label>
                 <label>Mot de passe <input type="password" name="passwordConf" id="passwordConf" value="" required/></label>
                
-                <label>age <input type="text" class="age" name="age" id="age" value=""/></label>
+                <label>Age <input type="text" class="age" name="age" id="age" value=""/></label>
                 <a href="#" id="new-user-btn" class="button metal linear">Créer</a>
             </form>
         </section>
