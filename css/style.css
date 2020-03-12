@@ -2,6 +2,7 @@ html {
     background-color: silver;
     background-image: url('../assets/background-main.jpg');
     background-size: 100% auto;
+    background-repeat: no-repeat;
 }
 body {
     max-width: 1024px;
@@ -77,18 +78,29 @@ section.login > section {
     width: 100%;
     justify-content: space-between;
 }
-ul.menu {
+ul.menu :hover {
+  
+     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 blue;
+}
+ul.menu  {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     padding: 0;
     margin: 0;
+    
 }
 ul.menu li {
     display: inline-block;
 }
 ul.dashboard li {
     display: inline-block;
+    
+}
+
+ul.dashboard : hover {
+    
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 a.button.linear {
     width: 10rem;
@@ -100,8 +112,8 @@ a.button.linear {
     align-items: center;
     text-decoration: none;
 }
-canvas.sea {
-    background: url('../assets/sea.jpg') no-repeat;
+canvas.koko {
+    background: url('../assets/koko.jpg') no-repeat;
     border: 3px ridge silver;
     font-family: 'Font Awesome 5 Free', serif;
     font-weight: 900;
